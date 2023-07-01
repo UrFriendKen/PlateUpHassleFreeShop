@@ -22,7 +22,7 @@ namespace KitchenHassleFreeShop
 
         protected override void OnUpdate()
         {
-            if (Main.Mod_Enabled)
+            if ((Main.PrefManager?.Get<int>(Main.ENABLED_PREFERENCE_ID) ?? 0) == 1)
             {
                 NativeArray<Entity> parcels = parcelsQuery.ToEntityArray(Allocator.Temp);
                 foreach (Entity parcel in parcels)

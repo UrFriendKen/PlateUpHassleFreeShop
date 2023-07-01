@@ -16,7 +16,7 @@ namespace KitchenHassleFreeShop
 
         protected override void OnUpdate()
         {
-            if (Main.Mod_Enabled)
+            if ((Main.PrefManager?.Get<int>(Main.ENABLED_PREFERENCE_ID) ?? 0) == 1)
             {
                 NativeArray<Entity> letters = lettersQuery.ToEntityArray(Allocator.Temp);
                 foreach (Entity letter in letters)

@@ -9,12 +9,11 @@ namespace KitchenHassleFreeShop
     {
         public const string MOD_GUID = "IcedMilo.PlateUp.HassleFreeShop";
         public const string MOD_NAME = "Hassle Free Shop";
-        public const string MOD_VERSION = "0.1.2";
+        public const string MOD_VERSION = "0.1.3";
 
         public const string ENABLED_PREFERENCE_ID = "Enabled";
-        internal static bool Mod_Enabled = false;
 
-        private PreferenceSystemManager PrefManager;
+        internal static PreferenceSystemManager PrefManager;
 
         public Main()
         {
@@ -32,11 +31,7 @@ namespace KitchenHassleFreeShop
                     ENABLED_PREFERENCE_ID,
                     1,
                     new int[] { 0, 1 },
-                    new string[] { "Disabled", "Enabled" },
-                    delegate (int i)
-                    {
-                        Mod_Enabled = i == 1;
-                    })
+                    new string[] { "Disabled", "Enabled" })
                 .AddSpacer()
                 .AddSpacer();
 
