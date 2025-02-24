@@ -1,13 +1,13 @@
 ﻿using Kitchen;
 using KitchenData;
-using KitchenLib.Utils;
+using KitchenMods;
 using System;
 using Unity.Collections;
 using Unity.Entities;
 
 namespace KitchenHassleFreeShop
 {
-    public class IngredientParcelsStartOpen : NightSystem
+    public class IngredientParcelsStartOpen : NightSystem, IModSystem
     {
         EntityQuery parcelsQuery;
         //MethodInfo m_Perform;
@@ -55,11 +55,7 @@ namespace KitchenHassleFreeShop
             Set(entity, CItemProvider.InfiniteItemProvider(letter.IngredientID));
             Set(entity, new CPosition(position));
 
-            string providerName = "Unknown";
-            try
-            {
-                providerName = GDOUtils.GetExistingGDO(iD).name;
-            } catch (NullReferenceException) { }
+            string providerName = GameData.Main.TryGet(iD, out Appliance appliance) ? appliance.name : "Unknown";
             Main.LogInfo($"Created Ingredient Provider {providerName} ({iD}) from parcel.");
         }
     }

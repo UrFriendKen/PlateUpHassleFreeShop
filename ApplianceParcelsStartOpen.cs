@@ -1,12 +1,12 @@
 ﻿using Kitchen;
-using KitchenLib.Utils;
-using System;
+using KitchenData;
+using KitchenMods;
 using Unity.Collections;
 using Unity.Entities;
 
 namespace KitchenHassleFreeShop
 {
-    public class ApplianceParcelsStartOpen : NightSystem
+    public class ApplianceParcelsStartOpen : NightSystem, IModSystem
     {
         EntityQuery parcelsQuery;
 
@@ -44,12 +44,7 @@ namespace KitchenHassleFreeShop
             });
             Set(entity, new CPosition(position));
 
-            string applianceName = "Unknown";
-            try
-            {
-                applianceName = GDOUtils.GetExistingGDO(letter.ApplianceID).name;
-            }
-            catch (NullReferenceException) { }
+            string applianceName = GameData.Main.TryGet(letter.ApplianceID, out Appliance appliance) ? appliance.name : "Unknown";
             Main.LogInfo($"Created Appliance {applianceName} ({letter.ApplianceID}) from parcel.");
         }
     }

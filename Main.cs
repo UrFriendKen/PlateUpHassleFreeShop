@@ -1,6 +1,5 @@
 ﻿using KitchenMods;
 using PreferenceSystem;
-using UnityEngine;
 
 // Namespace should have "Kitchen" in the beginning
 namespace KitchenHassleFreeShop

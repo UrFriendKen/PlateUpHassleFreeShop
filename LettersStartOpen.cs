@@ -1,10 +1,11 @@
 ﻿using Kitchen;
 using Unity.Collections;
 using Unity.Entities;
+using KitchenMods;
 
 namespace KitchenHassleFreeShop
 {
-    public class LettersStartOpen : NightSystem
+    public class LettersStartOpen : NightSystem, IModSystem
     {
         EntityQuery lettersQuery;
         protected override void Initialise()
