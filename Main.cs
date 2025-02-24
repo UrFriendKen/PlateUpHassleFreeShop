@@ -8,7 +8,7 @@ namespace KitchenHassleFreeShop
     {
         public const string MOD_GUID = "IcedMilo.PlateUp.HassleFreeShop";
         public const string MOD_NAME = "Hassle Free Shop";
-        public const string MOD_VERSION = "0.1.3";
+        public const string MOD_VERSION = "0.1.4";
 
         public const string ENABLED_PREFERENCE_ID = "Enabled";
 
