@@ -8,7 +8,8 @@ namespace KitchenHassleFreeShop
     public class LettersStartOpen : NightSystem, IModSystem
     {
         EntityQuery lettersQuery;
-        protected override void Initialise()
+
+        public override void Initialise()
         {
             base.Initialise();
             lettersQuery = GetEntityQuery(new QueryHelper()

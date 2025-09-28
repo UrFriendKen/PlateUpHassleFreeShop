@@ -10,7 +10,7 @@ namespace KitchenHassleFreeShop
     {
         EntityQuery parcelsQuery;
 
-        protected override void Initialise()
+        public override void Initialise()
         {
             base.Initialise();
             parcelsQuery = GetEntityQuery(new QueryHelper()
